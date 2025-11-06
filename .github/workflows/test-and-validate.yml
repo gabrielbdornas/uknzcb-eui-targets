@@ -23,9 +23,9 @@ jobs:
       - run: pixi run tests
       - run: pixi run frictionless-validate
       - name: Workflow failure notification
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         if: failure()
         with:
           filename: .github/frictionless-validate-failure.md
