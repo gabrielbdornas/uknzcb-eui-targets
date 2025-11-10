@@ -1115,7 +1115,7 @@ packages:
 - pypi: ./
   name: netzero-metrics-reference-data
   version: 0.1.0
-  sha256: 51ae7691afffd850c74a1953c00ea67cfbc31be050693e441221a421e95f65ea
+  sha256: 6e50156998bcc87043effd98007eb76d99380d526bb1773ebc1550f9fe30fb45
   requires_dist:
   - frictionless>=5.18.1,<6
   requires_python: '>=3.11'
