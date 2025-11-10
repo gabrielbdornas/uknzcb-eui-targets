@@ -29,5 +29,5 @@ get-eui = { cmd = "python get_eui.py", cwd = "scripts" }
 create-datapackage = { cmd = "python create_datapackage.py", cwd = "scripts" }
 cp-data = { cmd = "python scripts/cp_data.py"} #, cwd = "scripts"
 tests = {cmd = "pytest", depends-on = ["cp-data"] }
-build = "hatch build"
+build = {cmd ="hatch build", depends-on = ["cp-data"] }
 frictionless-validate = { cmd = "frictionless validate datapackage.yaml" }
