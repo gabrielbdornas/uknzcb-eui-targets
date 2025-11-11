@@ -21,11 +21,10 @@ jobs:
           cache-write: ${{ github.event_name == 'push' && github.ref_name == 'main' }}
       - run: pixi run tests
       - run: pixi run frictionless-validate
-      # TODO
-      # - name: Workflow failure notification
-      #   uses: JasonEtco/create-an-issue@v2
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #   if: failure()
-      #   with:
-      #     filename: .github/frictionless-validate-failure.md
+      - name: Workflow failure notification
+        uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        if: failure()
+        with:
+          filename: .github/frictionless-validate-failure.md
